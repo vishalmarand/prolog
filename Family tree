@@ -1,0 +1,92 @@
+
+male(bijalbhai) . 
+male(radhubhai) .
+male(babubhai) . 
+male(arjanbhai) .
+male(jagdishbhai) .
+male(yash).
+male(nayan) .
+male(nayan).
+male(bipin).
+male(govinbhai).
+male(dudabhai).
+male(rahul).
+
+
+female(rupaben) . 
+female(dhanuben) . 
+female(raniben) . 
+female(ratiben) . 
+female(savitriben) . 
+female(minaben). 
+female(daiben). 
+female(rupaben) . 
+female(gitaben). 
+female(disha) . 
+female(palak) . 
+female(dipu) .
+female(moni) . 
+
+parent(bijalbhai,arjanbhai) .
+parent(rupaben,arjanbhai) . 
+
+parent(bijalbhai,babubhai) .
+parent(rupaben,babubhai) . 
+
+parent(bijalbhai,raniben) .
+parent(rupaben,raniben) . 
+
+parent(bijalbhai,ratiben) .
+parent(rupaben,ratiben) . 
+
+parent(radhubhai, jagdishbhai) .
+parent(dhanuben,jagdishbhai) . 
+
+parent(radhubhai,savitriben) .
+parent(dhanuben,savitriben) . 
+
+parent(radhubhai,gitaben) .
+parent(dhanuben,gitaben) .
+
+parent(arjanbhai,yash) .
+parent(savitriben,yash) .
+
+parent(arjanbhai,disha) .
+parent(savitriben,disha) .
+
+parent(babubhai,bipin) .
+parent(daiben,bipin) .
+
+parent(dudabhai,dipu) .
+parent(ratiben,dipu) .
+
+parent(jagdishbhai,nayan) .
+parent(minaben,nayan) .
+
+parent(gitaben,nayan) .
+parent(bharatbhai,het) .
+
+father(X,Y):-parent(X,Y),male(X).
+mother(X,Y):-parent(X,Y),female(X).
+
+brother(X,Y):-parent(Z,X),parent(Z,Y),male(X),X\==Y.
+sister(X,Y):-parent(Z,X),parent(Z,Y),female(X),X\==Y.
+
+kaka(X,Y):-father(Z,Y),brother(X,Z).
+
+fui(X,Y):-father(Z,Y),sister(X,Z).
+
+mama(X,Y):-mother(Z,Y),brother(X,Z).
+
+masi(X,Y):-mother(Z,Y),sister(X,Z).
+
+nana(X,Y):-mother(Z,Y),father(X,Z).
+
+nani(X,Y):-mother(Z,Y),mother(X,Z).
+
+dada(X,Y):-father(Z,Y),father(X,Z).
+
+dadi(X,Y):-father(Z,Y),mother(X,Z).
+
+
+ 
